@@ -16,7 +16,11 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
+        "name": "typescript-styled-plugin",
+        "tags": ["styled", "css", "sty"]
+      },
+      {
+        "name": "next",
       }
     ],
     "paths": {
