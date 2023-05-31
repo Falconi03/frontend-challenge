@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchIcon from "./Search-icon";
+import SearchIcon from "./icons/Search-icon";
 import { InputHTMLAttributes, useContext } from "react";
 import { FilterContext } from "@/context/filter-context";
 

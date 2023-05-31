@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import ArrowIcon from "./Arrow-icon"
+import ArrowIcon from "./icons/Arrow-icon"
 import { useContext, useState } from "react"
 import { FilterContext } from "@/context/filter-context"
 import { PriorityTypes } from "@/types/priority-types"
