@@ -2,7 +2,6 @@
 
 import { Saira_Stencil_One } from 'next/font/google'
 import styled from 'styled-components'
-import SearchIcon from './Search-icon'
 import PrimaryInputWSearchIcon from './Primaty-input'
 import CartControl from './Cart-control'
 
@@ -35,6 +34,7 @@ const Logo = styled.a`
 `
 
 export default function Header() {
+
     return (
         <TagHeader>
             <Logo className={sairaStencil.className}>capputeeno</Logo>
