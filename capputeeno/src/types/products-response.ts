@@ -1,4 +1,4 @@
-import { IProducts } from "./products"
+import { IProducts } from "./products-types"
 
 export interface ProductsFetchResponse {
     data:{

@@ -8,6 +8,11 @@ const FilterContainer = styled.div`
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    @media (max-width: ${props => props.theme.phoneBreakpoint}){
+        justify-content: center;
+        }
 `
 
 export default function FilterBar() {

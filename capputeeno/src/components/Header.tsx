@@ -13,23 +13,34 @@ const sairaStencil = Saira_Stencil_One({
 const TagHeader = styled.header`
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 160px;  
-    
+    justify-content: center;
+    padding: 8px 12px;  
+    flex-wrap: wrap;
     div{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 24px;
     }
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint}){
+        padding: 20px 160px;
+    }
+    @media (min-width: ${props => props.theme.tabletBreakpoint}){        
+        justify-content: space-between;
+    }
 `
 
 const Logo = styled.a`
     color: var(--logo-color);
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 400;
-    line-height: 60px;
-    letter-spacing: 0em;
+    line-height: 50px;
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint}){
+        font-size: 40px;
+        line-height: 60px;
+    }
 
 `
 

@@ -12,8 +12,12 @@ const FilterList = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 15px;
     list-style: none;
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint}){
+        gap: 40px;
+    }
 `
 
 const FilterItem = styled.li<FilterItemProps>`
@@ -25,8 +29,11 @@ const FilterItem = styled.li<FilterItemProps>`
     text-transform: uppercase;
     color: ${props => props.selected ? 'var(--text-dark-2)' : 'var(--text-dark)'};
     cursor: pointer;
-
     border-bottom: ${props => props.selected ? '4px solid var(--orange-low)' : ''};
+
+    @media (max-width: ${props => props.theme.phoneBreakpoint}){
+            font-size: 10px;
+        }
 
 `
 
