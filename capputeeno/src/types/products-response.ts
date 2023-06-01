@@ -5,3 +5,9 @@ export interface ProductsFetchResponse {
         allProducts: IProducts[]
     }
 }
+
+export interface EachProductFetchResponse {
+    data:{
+        Product: IProducts
+    }
+}

@@ -1,10 +1,12 @@
 import formattedValue from "@/app/utils/format-price";
+import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 interface ProductCardProps {
     image: string,
     title: string,
     price: number,
+    id:string
 }
 
 const Card = styled.div`
@@ -17,6 +19,7 @@ const Card = styled.div`
     backdrop-filter: blur(10px);
     border-radius: 4px;
     overflow: hidden;
+    cursor: pointer;
     
     img{
         width: 256px;
@@ -51,8 +54,10 @@ const Card = styled.div`
 
 export default function ProductCard(props: ProductCardProps) {
 
+    const router = useRouter()
+
     return (
-        <Card>
+        <Card  onClick={() => router.push(`/product?id=${props.id}`)}>
             <img src={props.image}></img>
             <h3>{props.title}</h3>
             <div></div>

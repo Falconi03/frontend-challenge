@@ -16,6 +16,8 @@ const TagHeader = styled.header`
     justify-content: center;
     padding: 8px 12px;  
     flex-wrap: wrap;
+    background-color: white;
+    
     div{
         display: flex;
         align-items: center;

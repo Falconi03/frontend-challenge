@@ -13,7 +13,7 @@ const fetcher = (query: string): AxiosPromise<ProductsFetchResponse> => {
 }
 
 
-export default function useProducts() {
+export function useProducts() {
     const { priority, type, search } = useContext(FilterContext)
     const searchDeferred = useDeferredValue(search)
     const query = mountQuery(priority, type)
@@ -29,3 +29,4 @@ export default function useProducts() {
         data: filterdProducts
     }
 }
+

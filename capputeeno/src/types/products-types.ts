@@ -3,4 +3,6 @@ export interface IProducts {
     price_in_cents: number,
     id: string,
     image_url: string
+    category: string
+    description?: string,
 }

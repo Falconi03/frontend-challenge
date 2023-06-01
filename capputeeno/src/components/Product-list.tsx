@@ -1,6 +1,6 @@
 'use client'
 
-import useProducts from "@/hooks/useProducts"
+import {useProducts} from "@/hooks/useProducts"
 import ProductCard from "./Product-card";
 import styled from "styled-components";
 
@@ -18,10 +18,11 @@ export default function ProductsList() {
 
     return (
         <ListCOntainer>
-            {data?.map((product, id) => {
+            {data?.map((product) => {
                 return (
                     <ProductCard
-                        key={id}
+                        key={product.id}
+                        id = {product.id}
                         title={product.name}
                         image={product.image_url}
                         price={product.price_in_cents}
