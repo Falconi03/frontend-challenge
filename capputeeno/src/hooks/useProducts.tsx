@@ -19,7 +19,8 @@ export function useProducts() {
     const query = mountQuery(priority, type)
     const { data } = useQuery({
         queryFn: () => fetcher(query),
-        queryKey: ['products', type, priority]
+        queryKey: ['products', type, priority],
+        staleTime: 1000 * 60 
     })
 
     const products = data?.data?.data.allProducts

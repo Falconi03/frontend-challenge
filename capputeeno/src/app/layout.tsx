@@ -20,10 +20,10 @@ const PageContainer = styled.main`
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
-  padding: 12px 18px;
+  padding: 12px 18px 0 18px;
   background-color: var(--bg-primary);
   @media (min-width: ${props => props.theme.desktopBreakpoint}){
-        padding: 34px 160px;
+        padding: 34px 160px 0 160px;
     }
 `
 

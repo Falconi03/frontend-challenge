@@ -99,9 +99,28 @@ const CartBtn = styled.button`
 
 `
 
-export default function Product({searchParams}: { searchParams: {id:string} }) {
+export default function Product({ searchParams }: { searchParams: { id: string } }) {
 
     const { data } = useEachProduct(searchParams.id);
+
+    const handleAddToCart = () => {
+        let cartItemsJson = localStorage.getItem('cart-items')
+        if (cartItemsJson) {
+            let cartItems = JSON.parse(cartItemsJson)
+
+            let existItemsIndex = cartItems.findIndex((item: { id: string }) => item.id == data?.id)
+            if (existItemsIndex !== -1) {
+                cartItems[existItemsIndex].qnt += 1
+                localStorage.setItem('cart-items', JSON.stringify(cartItems))
+            } else {
+                cartItems.push({ ...data, qnt: 1 })
+                localStorage.setItem('cart-items', JSON.stringify(cartItems))
+                window.location.reload()
+            }
+        } else {
+            localStorage.setItem('cart-items', JSON.stringify([{ ...data, qnt: 1 }]))
+        }
+    }
 
     return (
         <>
@@ -117,7 +136,7 @@ export default function Product({searchParams}: { searchParams: {id:string} }) {
                         <h3>DESCRIÇÃO</h3>
                         <p>{data?.description}</p>
                     </Description>
-                    <CartBtn>
+                    <CartBtn onClick={() => handleAddToCart()}>
                         <WhiteCartIcon />
                         ADICIONAR AO CARRINHO
                     </CartBtn>

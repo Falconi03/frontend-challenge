@@ -18,6 +18,11 @@ const BackBtnStyled = styled.button`
     align-self: flex-start;
     cursor: pointer;
     margin-bottom: 24px;
+    
+    :focus-visible {
+	outline: none;
+    }
+
 `
 
 export default function BackBtn() {
